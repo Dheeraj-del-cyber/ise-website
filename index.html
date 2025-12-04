@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ISE F SECTION 2025 - Canara Engineering College</title>
+<style>
+    body { font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#f0f4f8; margin:0; }
+    header { background:#0a74da; color:white; text-align:center; padding:50px 20px; }
+    header h1 { margin-bottom:10px; }
+    nav { display:flex; justify-content:center; gap:15px; flex-wrap:wrap; margin:20px 0; }
+    nav button { padding:12px 25px; border:none; border-radius:25px; background:#0a74da; color:white; cursor:pointer; transition:0.3s; }
+    nav button:hover { background:#074a9a; }
+    section { display:none; max-width:1200px; margin:20px auto; padding:30px; background:white; border-radius:15px; box-shadow:0 5px 15px rgba(0,0,0,0.1); }
+    section.active { display:block; }
+    h2 { text-align:center; color:#0a74da; margin-bottom:20px; }
+    table { width:100%; border-collapse:collapse; }
+    th, td { border:1px solid #ccc; padding:10px; text-align:center; }
+    th { background:#0a74da; color:white; }
+    tbody tr:nth-child(even){background:#f2f2f2;}
+    tbody tr:nth-child(odd){background:#ffffff;}
+    .search-container { display:flex; justify-content:flex-end; margin-bottom:15px; }
+    .search-container input { padding:10px; border-radius:25px; border:1px solid #0a74da; outline:none; width:220px; }
+    .search-container button { padding:10px 15px; margin-left:5px; border:none; border-radius:25px; background:#0a74da; color:white; cursor:pointer; }
+    .notes-list a { display:block; padding:12px; margin-bottom:8px; border-radius:10px; background:#f5f5f5; text-decoration:none; color:#333; }
+    .notes-list a:hover { background:#0a74da; color:white; }
+    footer { text-align:center; padding:20px; background:#e0e0e0; margin-top:20px; }
+    #loginContainer { display:flex; justify-content:center; align-items:center; height:100vh; background:#e3f2fd; }
+    #loginBox { background:white; padding:40px; border-radius:20px; width:340px; box-shadow:0 5px 20px rgba(0,0,0,0.2); }
+    #loginBox input { width:100%; padding:12px; margin-bottom:15px; border-radius:25px; border:1px solid #0a74da; outline:none; }
+    #loginBox button { width:100%; padding:12px; border:none; border-radius:25px; background:#0a74da; color:white; cursor:pointer; }
+    .home-quote { text-align:center; font-size:1.2rem; color:#333; margin-top:40px; line-height:1.6; }
+</style>
+</head>
+<body>
+
+<!-- Sign-in -->
+<div id="loginContainer">
+    <div id="loginBox">
+        <h2 style="text-align:center;">Sign In</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="checkLogin()">Login</button>
+        <p id="loginMsg" style="color:red;text-align:center;"></p>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div id="mainContent" style="display:none;">
+<header>
+    <h1>ISE F SECTION 2025</h1>
+    <p>Welcome to ISE F SECTION 2025 — Where Ideas Become Innovation!</p>
+</header>
+
+<nav>
+    <button onclick="showSection('home')">Home</button>
+    <button onclick="showSection('timetable')">Timetable</button>
+    <button onclick="showSection('notes')">Notes & Resources</button>
+    <button onclick="showSection('students')">Student List</button>
+    <button onclick="showSection('contact')">Contact</button>
+</nav>
+
+<!-- Home -->
+<section id="home" class="active">
+    <h2>About ISE F SECTION 2025</h2>
+    <p class="home-quote">"Education is not the learning of facts, but the training of the mind to think." – Albert Einstein</p>
+    <p class="home-quote">Welcome to our class portal! Here, you can access the timetable, notes, and details about all classmates. Let's make this year productive and fun together!</p>
+</section>
+
+<!-- Timetable -->
+<section id="timetable">
+    <h2>Class Timetable</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Day / Time</th>
+                <th>09:00–09:50</th>
+                <th>09:50–10:40</th>
+                <th>10:40–11:00</th>
+                <th>11:00–11:50</th>
+                <th>11:50–12:40</th>
+                <th>12:40–01:30</th>
+                <th>01:30–02:25</th>
+                <th>02:25–03:20</th>
+                <th>03:30–04:25</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Monday</td>
+                <td>Maths</td>
+                <td>Chemistry</td>
+                <td>Break</td>
+                <td>AI</td>
+                <td>CS</td>
+                <td>Lunch</td>
+                <td>Python</td>
+                <td>IME</td>
+                <td>Remedial</td>
+            </tr>
+            <tr>
+                <td>Tuesday</td>
+                <td>Chemistry</td>
+                <td>Python</td>
+                <td>Break</td>
+                <td>Lab</td>
+                <td>Lab</td>
+                <td>Lunch</td>
+                <td>Maths</td>
+                <td>AI</td>
+                <td>Mentoring</td>
+            </tr>
+            <tr>
+                <td>Wednesday</td>
+                <td>IME</td>
+                <td>Chemistry</td>
+                <td>Break</td>
+                <td>Math(T)</td>
+                <td>Math(T)</td>
+                <td>Lunch</td>
+                <td>Co-curricular</td>
+                <td>Curricular</td>
+                <td>Curricular</td>
+            </tr>
+            <tr>
+                <td>Thursday</td>
+                <td>AI</td>
+                <td>IME</td>
+                <td>Break</td>
+                <td>Python</td>
+                <td>Math</td>
+                <td>Lunch</td>
+                <td>Lab</td>
+                <td>Lab</td>
+                <td>Remedial</td>
+            </tr>
+            <tr>
+                <td>Friday</td>
+                <td>Python</td>
+                <td>ICEE</td>
+                <td>Break</td>
+                <td>Maths</td>
+                <td>AI</td>
+                <td>Lunch</td>
+                <td>IME</td>
+                <td>Chemistry</td>
+                <td>CS</td>
+            </tr>
+            <tr>
+                <td>Saturday</td>
+                <td colspan="9">IDT (Full Day)</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- Notes -->
+<section id="notes">
+    <h2>Notes & Study Resources</h2>
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search notes...">
+        <button onclick="searchNotes()">Find</button>
+    </div>
+
+    <div class="notes-list" id="notesList">
+        <!-- Mathematics -->
+        <a href="pdfs/maths_unit1.pdf" target="_blank" download>Maths - Module 1</a>
+        <a href="pdfs/maths_unit2.pdf" target="_blank" download>Maths - Module 2</a>
+        <a href="pdfs/maths_unit3.pdf" target="_blank" download>Maths - Module 3</a>
+        <a href="pdfs/maths_unit4.pdf" target="_blank" download>Maths - Module 4</a>
+        <a href="pdfs/maths_unit5.pdf" target="_blank" download>Maths - Module 5</a>
+
+        <!-- Chemistry -->
+        <a href="pdfs/chemistry_notes1.docx" target="_blank" download>Chemistry - Module 1</a>
+        <a href="pdfs/chemistry_notes2.docx" target="_blank" download>Chemistry - Module 2</a>
+        <a href="pdfs/chemistry_notes3.docx" target="_blank" download>Chemistry - Module 3</a>
+        <a href="pdfs/chemistry_notes4.docx" target="_blank" download>Chemistry - Module 4</a>
+        <a href="pdfs/chemistry_notes5.pdf" target="_blank" download>Chemistry - Module 5</a>
+
+        <!-- Python -->
+        <a href="pdfs/python_unit1.pdf" target="_blank" download>Python - Module 1</a>
+        <a href="pdfs/python_unit2.pdf" target="_blank" download>Python - Module 2</a>
+        <a href="pdfs/python_unit3.pdf" target="_blank" download>Python - Module 3</a>
+        <a href="pdfs/python_unit4.pdf" target="_blank" download>Python - Module 4</a>
+        <a href="pdfs/python_unit5.pdf" target="_blank" download>Python - Module 5</a>
+
+        <!-- AI -->
+        <a href="pdfs/ai_unit1.pdf" target="_blank" download>AI - Module 1</a>
+        <a href="pdfs/ai_unit2.pdf" target="_blank" download>AI - Module 2</a>
+        <a href="pdfs/ai_unit3.pdf" target="_blank" download>AI - Module 3</a>
+        <a href="pdfs/ai_unit4.pdf" target="_blank" download>AI - Module 4</a>
+        <a href="pdfs/ai_unit5.pdf" target="_blank" download>AI - Module 5</a>
+
+        <!-- IME -->
+        <a href="pdfs/ime_unit1.pdf" target="_blank" download>IME - Module 1</a>
+        <a href="pdfs/ime_unit2.pdf" target="_blank" download>IME - Module 2</a>
+        <a href="pdfs/ime_unit3.pdf" target="_blank" download>IME - Module 3</a>
+        <a href="pdfs/ime_unit4.pdf" target="_blank" download>IME - Module 4</a>
+        <a href="pdfs/ime_unit5.pdf" target="_blank" download>IME - Module 5</a>
+
+        <!-- ICEE -->
+        <a href="pdfs/icee_unit1.pdf" target="_blank" download>Indian Constitution - Part 1</a>
+        <a href="pdfs/icee_unit2.pdf" target="_blank" download>Indian Constitution - Part 2</a>
+    </div>
+</section>
+<!-- Student List -->
+<section id="students">
+    <h2>Student List</h2>
+    <div class="search-container">
+        <input type="text" id="studentSearch" placeholder="Search by name or roll number...">
+        <button onclick="searchStudents()">Find</button>
+    </div>
+    <table id="studentTable">
+        <thead>
+            <tr>
+                <th>Roll Number</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>IS001</td><td>Aishwarya Devadiga</td></tr>
+            <tr><td>IS002</td><td>Ajith Kumar H G</td></tr>
+            <tr><td>IS003</td><td>Amulya Vinod Naik</td></tr>
+            <tr><td>IS004</td><td>Ananya Mohan Naik</td></tr>
+            <tr><td>IS005</td><td>Ananya Pandurang Naik</td></tr>
+            <tr><td>IS006</td><td>Ankith Shanbhogue</td></tr>
+            <tr><td>IS007</td><td>Anvith Shetty</td></tr>
+            <tr><td>IS008</td><td>Arnold J Gomes</td></tr>
+            <tr><td>IS009</td><td>Ashitha</td></tr>
+            <tr><td>IS010</td><td>Avinitha N Poojary</td></tr>
+            <tr><td>IS011</td><td>Bhagyaraj</td></tr>
+            <tr><td>IS012</td><td>Bhumika Masti Naik</td></tr>
+            <tr><td>IS013</td><td>Bhuvaneshwari Shet</td></tr>
+            <tr><td>IS014</td><td>Bibi Aysha Tyba</td></tr>
+            <tr><td>IS015</td><td>Chethan Shetty</td></tr>
+            <tr><td>IS016</td><td>Chinmaya S Pai</td></tr>
+            <tr><td>IS017</td><td>Chinmayi T</td></tr>
+            <tr><td>IS018</td><td>Chinthan M Shetty</td></tr>
+            <tr><td>IS019</td><td>Chithra Devadiga</td></tr>
+            <tr><td>IS020</td><td>Deeksha</td></tr>
+            <tr><td>IS021</td><td>Deekshitha Manjunath Naik</td></tr>
+            <tr><td>IS022</td><td>Deekshita R Shanbhag</td></tr>
+            <tr><td>IS023</td><td>Dhaneesh Bhandary</td></tr>
+            <tr><td>IS024</td><td>Dhanya</td></tr>
+            <tr><td>IS025</td><td>Dheeraj</td></tr>
+            <tr><td>IS026</td><td>Dhiraj Shivaram Moger</td></tr>
+            <tr><td>IS027</td><td>Dipin KR</td></tr>
+            <tr><td>IS028</td><td>Disha Deepak Naik</td></tr>
+            <tr><td>IS029</td><td>G P Supreeth</td></tr>
+            <tr><td>IS030</td><td>Gagan Dombe</td></tr>
+            <tr><td>IS031</td><td>Ganesh Govind Naik</td></tr>
+            <tr><td>IS032</td><td>Gangotri Ganesh Achari</td></tr>
+            <tr><td>IS033</td><td>Gauthami K</td></tr>
+            <tr><td>IS034</td><td>Hariprith P Rai</td></tr>
+            <tr><td>IS035</td><td>Hemanth G</td></tr>
+            <tr><td>IS036</td><td>Hemith B</td></tr>
+            <tr><td>IS037</td><td>Jathan C V</td></tr>
+            <tr><td>IS038</td><td>Karthik Prabhu</td></tr>
+            <tr><td>IS039</td><td>Khushbu Shankarlal Geloth</td></tr>
+            <tr><td>IS040</td><td>Kiran Bedu Gouda</td></tr>
+            <tr><td>IS041</td><td>Lasya B Shetty</td></tr>
+            <tr><td>IS042</td><td>Madhura Vivekanand Naik</td></tr>
+            <tr><td>IS043</td><td>Mahammad Ashir</td></tr>
+            <tr><td>IS044</td><td>Manasi Ganapati Harikantra</td></tr>
+            <tr><td>IS045</td><td>Manasvi Kini</td></tr>
+            <tr><td>IS046</td><td>Manoj Umesh Naik</td></tr>
+            <tr><td>IS047</td><td>Manvith S B</td></tr>
+            <tr><td>IS048</td><td>Manya K Shetty</td></tr>
+            <tr><td>IS049</td><td>Manya Mohan Naik</td></tr>
+            <tr><td>IS050</td><td>Megha</td></tr>
+            <tr><td>IS051</td><td>Meghana M J</td></tr>
+            <tr><td>IS052</td><td>Moksha G M</td></tr>
+            <tr><td>IS053</td><td>Moksha Surendra Shetty</td></tr>
+            <tr><td>IS054</td><td>N Hithashree</td></tr>
+            <tr><td>IS055</td><td>Niharika N L</td></tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+    <h2>Contact</h2>
+    <div style="text-align:center; margin-top:20px;">
+        <p><strong>CR Phone:</strong> +91-93539 23788</p>
+        <p><strong>Instagram:</strong> <a href="https://www.instagram.com/exotic_ise" target="_blank">@exotic_ise</a></p>
+    </div>
+</section>
+
+<footer>Designed by Dheeraj Koila</footer>
+
+</div>
+
+<script>
+function checkLogin(){
+    const password=document.getElementById('password').value;
+    if(password==="exotic"){
+        document.getElementById('loginContainer').style.display="none";
+        document.getElementById('mainContent').style.display="block";
+    } else {
+        document.getElementById('loginMsg').textContent="Incorrect password!";
+    }
+}
+
+function showSection(id){
+    document.querySelectorAll('section').forEach(sec=>sec.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+}
+
+function searchNotes(){
+    const input=document.getElementById('searchInput').value.toLowerCase();
+    const links=document.getElementById('notesList').getElementsByTagName('a');
+    for(let i=0;i<links.length;i++){
+        let text=links[i].textContent.toLowerCase();
+        links[i].style.display=text.includes(input)?"block":"none";
+    }
+}
+
+function searchStudents(){
+    const input = document.getElementById('studentSearch').value.toLowerCase();
+    const rows = document.getElementById('studentTable').getElementsByTagName('tr');
+    for(let i=1; i<rows.length; i++){ // skip header
+        let roll = rows[i].cells[0].textContent.toLowerCase();
+        let name = rows[i].cells[1].textContent.toLowerCase();
+        rows[i].style.display = (roll.includes(input) || name.includes(input)) ? '' : 'none';
+    }
+}
+</script>
+</body>
+</html>
