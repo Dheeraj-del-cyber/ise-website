@@ -29,7 +29,12 @@
     #loginBox { background:white; padding:40px; border-radius:20px; width:340px; box-shadow:0 5px 20px rgba(0,0,0,0.2); }
     #loginBox input { width:100%; padding:12px; margin-bottom:15px; border-radius:25px; border:1px solid #0a74da; outline:none; }
     #loginBox button { width:100%; padding:12px; border:none; border-radius:25px; background:#0a74da; color:white; cursor:pointer; }
-    .home-quote { text-align:center; font-size:1.2rem; color:#333; margin-top:40px; line-height:1.6; }
+    .home-quote { text-align:center; font-size:1.2rem; color:#333; margin-top:40px; line-height:1.6; }nav {
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap; /* allows wrapping on small screens */
+}
 </style>
 </head>
 <body>
@@ -70,7 +75,8 @@
 <!-- Timetable -->
 <section id="timetable">
     <h2>Class Timetable</h2>
-    <table>
+    <div style="overflow-x:auto;">
+      <table>
         <thead>
             <tr>
                 <th>Day / Time</th>
@@ -151,7 +157,8 @@
                 <td colspan="9">IDT (Full Day)</td>
             </tr>
         </tbody>
-    </table>
+      </table>
+    </div> 
 </section>
 
 <!-- Notes -->
