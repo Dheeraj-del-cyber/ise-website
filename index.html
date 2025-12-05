@@ -4,37 +4,260 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ISE F SECTION 2025 - Canara Engineering College</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 <style>
-    body { font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#f0f4f8; margin:0; }
-    header { background:#0a74da; color:white; text-align:center; padding:50px 20px; }
-    header h1 { margin-bottom:10px; }
-    nav { display:flex; justify-content:center; gap:15px; flex-wrap:wrap; margin:20px 0; }
-    nav button { padding:12px 25px; border:none; border-radius:25px; background:#0a74da; color:white; cursor:pointer; transition:0.3s; }
-    nav button:hover { background:#074a9a; }
-    section { display:none; max-width:1200px; margin:20px auto; padding:30px; background:white; border-radius:15px; box-shadow:0 5px 15px rgba(0,0,0,0.1); }
-    section.active { display:block; }
-    h2 { text-align:center; color:#0a74da; margin-bottom:20px; }
-    table { width:100%; border-collapse:collapse; }
-    th, td { border:1px solid #ccc; padding:10px; text-align:center; }
-    th { background:#0a74da; color:white; }
-    tbody tr:nth-child(even){background:#f2f2f2;}
-    tbody tr:nth-child(odd){background:#ffffff;}
-    .search-container { display:flex; justify-content:flex-end; margin-bottom:15px; }
-    .search-container input { padding:10px; border-radius:25px; border:1px solid #0a74da; outline:none; width:220px; }
-    .search-container button { padding:10px 15px; margin-left:5px; border:none; border-radius:25px; background:#0a74da; color:white; cursor:pointer; }
-    .notes-list a { display:block; padding:12px; margin-bottom:8px; border-radius:10px; background:#f5f5f5; text-decoration:none; color:#333; }
-    .notes-list a:hover { background:#0a74da; color:white; }
-    footer { text-align:center; padding:20px; background:#e0e0e0; margin-top:20px; }
-    #loginContainer { display:flex; justify-content:center; align-items:center; height:100vh; background:#e3f2fd; }
-    #loginBox { background:white; padding:40px; border-radius:20px; width:340px; box-shadow:0 5px 20px rgba(0,0,0,0.2); }
-    #loginBox input { width:100%; padding:12px; margin-bottom:15px; border-radius:25px; border:1px solid #0a74da; outline:none; }
-    #loginBox button { width:100%; padding:12px; border:none; border-radius:25px; background:#0a74da; color:white; cursor:pointer; }
-    .home-quote { text-align:center; font-size:1.2rem; color:#333; margin-top:40px; line-height:1.6; }nav {
-    display:flex;
-    justify-content:center;
-    gap:10px;
-    flex-wrap:wrap; /* allows wrapping on small screens */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(to bottom right, #e3f2fd, #f8fbff);
+        margin: 0;
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    header {
+        background: #0a74da;
+        color: white;
+        text-align: center;
+        padding: 60px 20px;
+        animation: slideDown 0.8s ease-out;
+    }
+
+    @keyframes slideDown {
+        from { transform: translateY(-50px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin: 20px 0;
+    }
+
+    nav button {
+        padding: 12px 25px;
+        border: none;
+        border-radius: 25px;
+        background: #0a74da;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+        font-weight: 600;
+        transform: scale(1);
+    }
+
+    nav button:hover {
+        background: #074a9a;
+        transform: scale(1.05);
+    }
+
+    section {
+        display: none;
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 30px;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        animation: fadePage 0.6s ease-in-out;
+    }
+
+    @keyframes fadePage {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    section.active {
+        display: block;
+    }
+
+    h2 {
+        text-align: center;
+        color: #654cc1;
+        margin-bottom: 20px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        animation: fadePage 0.8s ease-in-out;
+    }
+
+    th, td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: center;
+    }
+
+    th {
+        background: #6144d2;
+        color: rgb(0, 0, 0);
+    }
+
+    tbody tr:nth-child(even) { background: #f2f7ff; }
+    tbody tr:nth-child(odd) { background: #ffffff; }
+
+    .notes-list a {
+        display: block;
+        padding: 12px;
+        margin-bottom: 8px;
+        border-radius: 10px;
+        background: #f5f5f5;
+        text-decoration: none;
+        color: #333;
+        transition: 0.3s;
+    }
+
+    .notes-list a:hover {
+        background: #0a74da;
+        color: white;
+        transform: translateX(5px);
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        background: #e0e0e0;
+        margin-top: 20px;
+        animation: fadeIn 1s ease;
+    }
+
+    /* Full-screen background image or color */
+#loginContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('image.jpg') no-repeat center center/cover; /* replace with your photo path */
 }
+
+/* Glass effect */
+#loginBox {
+    background: #17E1E; /* semi-transparent blue */
+    backdrop-filter: blur(10px); /* glass blur effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    border-radius: 20px;
+    padding: 40px;
+    width: 380px;
+    box-shadow: 0 5px 20px rgba(178, 8, 8, 0.2);
+    animation: popUp 0.8s ease;
+    border: 1px solid rgba(131, 79, 79, 0.3); /* optional light border */
+}
+
+#loginBox input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 25px;
+    border: 1px solid rgba(255,255,255,0.6); /* slightly transparent border */
+    outline: none;
+    background: rgba(146, 34, 34, 0.15);
+    color: white;
+    font-size: 16px;
+}
+
+#loginBox input::placeholder {
+    color: rgba(255,255,255,0.7);
+}
+
+#loginBox button {
+    width: 60%;
+    padding: 12px;
+    margin: 10px;
+    border: none;
+    border-radius: 25px;
+    background: #0a74da;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    transition: 0.3s;
+    display: block;
+}
+
+#loginBox button:hover {
+    background: #074a9a;
+    transform: scale(1.05);
+}
+
+    @keyframes popUp {
+        from { transform: scale(0.8); opacity: 0; }
+        to { transform: scale(1); opacity: 1; }
+    }
+
+    #loginBox input {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 15px;
+        border-radius: 25px;
+        border: 1px solid #0a74da;
+        outline: none;
+    }
+
+    #loginBox button {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 25px;
+        background: #4276a6;
+        color: white;
+        cursor: pointer;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+
+    #loginBox button:hover {
+        background: #305b8f;
+        transform: scale(1.05);
+    }
+    /* Cool Search Button */
+.search-container button {
+    background: linear-gradient(90deg, #0a74da, #074a9a);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px; /* makes it round */
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.search-container button:hover {
+    transform: scale(1.1) rotate(-2deg);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    background: linear-gradient(90deg, #074a9a, #0a74da);
+}
+
+/* Optional: make the search input look better */
+.search-container input {
+    padding: 10px 15px;
+    border-radius: 50px;
+    border: 1px solid #0a74da;
+    outline: none;
+    width: 250px;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+}
+
+.search-container input:focus {
+    box-shadow: 0 0 10px rgba(10, 116, 218, 0.5);
+    border-color: #0a74da;
+}
+.user-welcome {
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    color: #0a74da;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 </style>
 </head>
 <body>
@@ -68,10 +291,10 @@
 <!-- Home -->
 <section id="home" class="active">
     <h2>About ISE F SECTION 2025</h2>
+    <p id="welcomeUser" class="user-welcome"></p> <!-- NEW -->
     <p class="home-quote">"Education is not the learning of facts, but the training of the mind to think." – Albert Einstein</p>
     <p class="home-quote">Welcome to our class portal! Here, you can access the timetable, notes, and details about all classmates. Let's make this year productive and fun together!</p>
 </section>
-
 <!-- Timetable -->
 <section id="timetable">
     <h2>Class Timetable</h2>
@@ -299,14 +522,21 @@
 
 <script>
 function checkLogin(){
-    const password=document.getElementById('password').value;
-    if(password==="exotic"){
-        document.getElementById('loginContainer').style.display="none";
-        document.getElementById('mainContent').style.display="block";
-    } else {
-        document.getElementById('loginMsg').textContent="Incorrect password!";
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    if (password === "exotic") {
+        document.getElementById('loginContainer').style.display = "none";
+        document.getElementById('mainContent').style.display = "block";
+        
+        // Display the username in home section
+        document.getElementById('welcomeUser').textContent = `Welcome ${username}`;
+    } 
+else {
+        document.getElementById('loginMsg').textContent = "Incorrect password!";
     }
 }
+
 
 function showSection(id){
     document.querySelectorAll('section').forEach(sec=>sec.classList.remove('active'));
